@@ -183,7 +183,7 @@ docker run \
     -v "/home/user/zips:/srv/zips" \
     -v "/home/user/logs:/srv/logs" \
     -v "/home/user/cache:/srv/ccache" \
-    lineageos4microg/docker-lineage-cicd
+    sn00x/docker-lineage-cicd
 ```
 
 ### Build for bacon (lineage-17.1, officially supported), custom keys, restricted signature spoofing with integrated microG and FDroid
@@ -201,7 +201,7 @@ docker run \
     -v "/home/user/cache:/srv/ccache" \
     -v "/home/user/keys:/srv/keys" \
     -v "/home/user/manifests:/srv/local_manifests" \
-    lineageos4microg/docker-lineage-cicd
+    sn00x/docker-lineage-cicd
 ```
 
 If there are already keys in `/home/user/keys` they will be used, otherwise a
@@ -238,7 +238,7 @@ docker run \
     -v "/home/user/cache:/srv/ccache" \
     -v "/home/user/keys:/srv/keys" \
     -v "/home/user/manifests:/srv/local_manifests" \
-    lineageos4microg/docker-lineage-cicd
+    sn00x/docker-lineage-cicd
 ```
 
 ### Build for a6000 (not officially supported), custom keys, restricted signature spoofing with integrated microG and FDroid
@@ -299,7 +299,7 @@ docker run \
     -v "/home/user/cache:/srv/ccache" \
     -v "/home/user/keys:/srv/keys" \
     -v "/home/user/manifests:/srv/local_manifests" \
-    lineageos4microg/docker-lineage-cicd
+    sn00x/docker-lineage-cicd
 ```
 
 
