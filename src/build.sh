@@ -210,6 +210,13 @@ for branch in ${BRANCH_NAME//,/ }; do
       mkdir -p "vendor/$vendor/overlay/microg/frameworks/base/core/res/res/values/"
       cp /root/signature_spoofing_patches/frameworks_base_config.xml "vendor/$vendor/overlay/microg/frameworks/base/core/res/res/values/config.xml"
     fi
+    
+    echo ">> [$(date)] Applying low ram patch to build/soong" | tee -a "$repo_log"
+    cd build/soong
+    git fetch https://github.com/masemoel/build_soong_legion-r 11 &>> "$repo_log"
+    git cherry-pick b45c5ae22f74f1bdbb9bfbdd06ecf7a25033c78b &>> "$repo_log"
+    git cherry-pick e020f2130224fbdbec1f83e3adfd06a9764cca87 &>> "$repo_log"
+    cd ../..
 
     echo ">> [$(date)] Setting \"$RELEASE_TYPE\" as release type"
     sed -i "/\$(filter .*\$(${vendor^^}_BUILDTYPE)/,+2d" "vendor/$vendor/config/common.mk"
